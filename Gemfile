@@ -26,8 +26,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Sorcery for user authentication
 gem 'sorcery'
 
-# Use Unicorn as the app server
-# gem 'unicorn'
+# Use Puma as the app server
+gem 'puma'
+
+# Required by Heroku deployment
+gem 'rails_12factor', group: :production
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
