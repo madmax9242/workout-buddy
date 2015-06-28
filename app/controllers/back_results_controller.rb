@@ -1,1 +1,3 @@
-back_results_controller.rb
+class Back_Results_Controller < ApplicationController
+
+end
