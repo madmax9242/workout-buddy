@@ -1,1 +1,31 @@
-_form.html.erb
+<%= form_for(@legs_result) do |f| %>
+
+  <div class="field">
+    Back Squat<br>
+    <%= f.number_field :back_squat %>
+  </div>
+  <div class="field">
+    Calf Raises<br />
+    <%= f.number_field :calf_raises %>
+  </div>
+  <div class="field">
+    Leg Press<br />
+    <%= f.number_field :leg_press %>
+  </div>
+  <div class="field">
+    Leg Curl<br />
+    <%= f.number_field :leg_curl %>
+  </div>
+  <div class="field">
+    Leg Extensions<br />
+    <%= f.number_field :leg_extensions %>
+  </div>
+  <div class="field">
+    Lunges<br />
+    <%= f.number_field :lunges %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

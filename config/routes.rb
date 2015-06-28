@@ -7,6 +7,9 @@ Rails.application.routes.draw do
 
   resources :user_sessions
   resources :users
+  resources :back_results
+  resources :chest_results
+  resources :legs_results
 
   get 'login' => 'user_sessions#new', :as => :login
   post 'logout' => 'user_sessions#destroy', :as => :logout
