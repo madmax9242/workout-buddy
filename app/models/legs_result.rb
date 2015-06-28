@@ -1,3 +1,3 @@
-class Leg_Result < ActiveRecord::Base
+class Legs_Result < ActiveRecord::Base
 	belongs_to :user
 end

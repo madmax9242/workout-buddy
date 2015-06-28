@@ -1,1 +1,31 @@
-_form.html.erb
+<%= form_for(@back_result) do |f| %>
+
+  <div class="field">
+    Seated Row<br>
+    <%= f.number_field :seated_row %>
+  </div>
+  <div class="field">
+    Lat Pulldown<br />
+    <%= f.number_field :lat_pulldown %>
+  </div>
+  <div class="field">
+    Renegade Row<br />
+    <%= f.number_field :renegade_row %>
+  </div>
+  <div class="field">
+    Seated Good Mornings<br />
+    <%= f.number_field :good_mornings %>
+  </div>
+  <div class="field">
+    Deadlift<br />
+    <%= f.number_field :deadlift %>
+  </div>
+  <div class="field">
+    Deltoid Fly<br />
+    <%= f.number_field :deltoid_fly %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

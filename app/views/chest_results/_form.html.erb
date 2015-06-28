@@ -1,1 +1,31 @@
-_form.html.erb
+<%= form_for(@chest_result) do |f| %>
+
+  <div class="field">
+    Flat Bench Press<br>
+    <%= f.number_field :flat_press %>
+  </div>
+  <div class="field">
+    Incline Dumbbell Press<br />
+    <%= f.number_field :incline_press %>
+  </div>
+  <div class="field">
+    Cable Fly<br />
+    <%= f.number_field :cable_fly %>
+  </div>
+  <div class="field">
+    Decline Bench Press<br />
+    <%= f.number_field :decline_press %>
+  </div>
+  <div class="field">
+    Incline Dumbbell Fly<br />
+    <%= f.number_field :incline_fly %>
+  </div>
+  <div class="field">
+    Stabilization Pushups<br />
+    <%= f.number_field :stablization_pushup %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
