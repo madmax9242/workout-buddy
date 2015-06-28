@@ -1,1 +1,3 @@
-chest_results_controller.rb
+class Chest_Results_Controller < ApplicationController
+
+end

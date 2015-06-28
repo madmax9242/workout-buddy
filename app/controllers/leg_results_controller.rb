@@ -1,1 +1,3 @@
-leg_results_controller.rb
+class Leg_Results_Controller < ApplicationController
+
+end
