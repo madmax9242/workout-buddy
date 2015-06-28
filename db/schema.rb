@@ -11,10 +11,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150627185443) do
+ActiveRecord::Schema.define(version: 20150628181739) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "back_results", force: :cascade do |t|
+    t.integer "seated_row"
+    t.integer "lat_pulldown"
+    t.integer "renegade_row"
+    t.integer "good_mornings"
+    t.integer "deadlift"
+    t.integer "deltoid_fly"
+    t.integer "user_id"
+  end
+
+  create_table "chest_results", force: :cascade do |t|
+    t.integer "flat_press"
+    t.integer "incline_press"
+    t.integer "cable_fly"
+    t.integer "decline_press"
+    t.integer "incline_fly"
+    t.integer "stablization_pushup"
+    t.integer "user_id"
+  end
+
+  create_table "legs_results", force: :cascade do |t|
+    t.integer "back_squat"
+    t.integer "calf_raises"
+    t.integer "leg_press"
+    t.integer "leg_curls"
+    t.integer "leg_extensions"
+    t.integer "lunges"
+    t.integer "user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",            null: false
@@ -26,4 +56,7 @@ ActiveRecord::Schema.define(version: 20150627185443) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
+  add_foreign_key "back_results", "users"
+  add_foreign_key "chest_results", "users"
+  add_foreign_key "legs_results", "users"
 end
