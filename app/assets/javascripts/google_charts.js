@@ -27,7 +27,7 @@ function drawChart(e1, e2, e3, e4, e5, e6, results) {
   chart.draw(data, options);
 }
 
-function getDataPoints () {
+function getDataPoints (type) {
   
   $.ajax( {
     url: "./show",
@@ -43,18 +43,16 @@ function getDataPoints () {
         });
         array.splice(-1,1);
         results.push(array);
-        console.log(results);
-        // return results;
       }
 
-      if (type == "back") {
+      if (window.location.pathname == "/back_results/show") {
         drawChart("Seated Row", "Lat Pulldown", "Renegade Row", "Seated Good Mornings", "Deadlift", "Deltoid Fly", results);
       
-      } else if (type == "chest")  {
-        drawChart();
+      } else if (window.location.pathname == "/chest_results/show")  {
+        drawChart("Flat Bench Press", "Incline Dumbbell Press", "Cable Fly", "Decline Bench Press", "Incline Fly", "Stabilization Pushup", results);
       
-      } else if (type == "legs")  {
-        drawChart();
+      } else if (window.location.pathname == "/legs_results/show")  {
+        drawChart("Back Squat", "Calf Raises", "Leg Press", "Leg Curl", "Leg Extension", "Lunges");
       }
           
 

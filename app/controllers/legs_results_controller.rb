@@ -3,8 +3,13 @@ class LegsResultsController < ApplicationController
     	@legs_results = Legs_Result.all
   	end
 
-  	def show
-  	end
+    def show
+      @legs_results = Legs_Result.all
+      respond_to do |format|
+        format.html
+        format.json { render :json => @legs_results.to_json }
+      end
+    end
 
   	def create
     @legs_result = Legs_Result.new(legs_params)

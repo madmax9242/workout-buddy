@@ -14,6 +14,7 @@ class BackResultsController < ApplicationController
 
   	def create
       @back_result = Back_Result.new(back_params)
+      @back_result.user_id = current_user.id
 
       respond_to do |format|
         if @back_result.save
