@@ -1,5 +1,5 @@
 function drawChart() {
-
+  getDataPoints();
   var data = new google.visualization.DataTable();
   data.addColumn('number', 'Day');
   data.addColumn('number', 'Guardians of the Galaxy');
@@ -35,4 +35,15 @@ function drawChart() {
   var chart = new google.charts.Line(document.getElementById('linechart_material'));
 
   chart.draw(data, options);
+}
+
+function getDataPoints () {
+  $.ajax( {
+    url: "back_results/index",
+    dataType: "json",
+
+    success: function(data)  {
+      console.log(data);
+    }
+  });
 }
