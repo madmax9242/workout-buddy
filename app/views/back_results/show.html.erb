@@ -1,1 +1,14 @@
-show.html.erb
+<html>
+<head>
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <script type="text/javascript">
+    google.load('visualization', '1.1', {packages: ['line']});
+    google.setOnLoadCallback(drawChart);
+
+  </script>
+</head>
+<body>
+  <div id="linechart_material"></div>
+
+</body>
+</html>
