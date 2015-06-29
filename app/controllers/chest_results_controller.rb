@@ -3,8 +3,13 @@ class ChestResultsController < ApplicationController
     	@chest_results = Chest_Result.all
   	end
 
-  	def show
-  	end
+    def show
+      @chest_results = Chest_Result.all
+      respond_to do |format|
+        format.html
+        format.json { render :json => @chest_results.to_json }
+      end
+    end
 
   	def create
     @chest_result = Chest_Result.new(chest_params)
