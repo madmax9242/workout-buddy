@@ -45,7 +45,7 @@ function getDataPoints (type) {
         results.push(array);
       }
 
-      if (window.location.pathname == "/back_results/show") {
+      if (window.location.pathname == "/back_results") {
         drawChart("Seated Row", "Lat Pulldown", "Renegade Row", "Seated Good Mornings", "Deadlift", "Deltoid Fly", results);
       
       } else if (window.location.pathname == "/chest_results/show")  {

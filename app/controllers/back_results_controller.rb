@@ -18,8 +18,8 @@ class BackResultsController < ApplicationController
 
       respond_to do |format|
         if @back_result.save
-          format.html { redirect_to :users, notice: 'Workout was successfully logged.' }
-          format.json { render :show, status: :created, location: @back_result }
+          format.html { redirect_to :back_results, notice: 'Workout was successfully logged.' }
+          # format.json { render :show, status: :created, location: @back_result }
         else
           format.html { render :new }
         end
