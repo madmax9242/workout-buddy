@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 
 <h1>Listing Users</h1>
 
@@ -6,4 +5,9 @@
 
 <br>
 
-<%= link_to 'New User', new_user_path %>
+<div class="results-box">
+	<h1 class="results-header">View your progress</h1><br>
+	<h3><%= link_to 'Chest Workout', chest_results_path %>  |
+	<%= link_to 'Back Workout', back_results_path %>  |
+	<%= link_to 'Legs Workout', legs_results_path %></h3>
+</div>	

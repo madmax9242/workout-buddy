@@ -1,6 +1,10 @@
 class ChestResultsController < ApplicationController
 	def index
     	@chest_results = Chest_Result.all
+      respond_to do |format|
+        format.html
+        format.json { render :json => @chest_results.to_json }
+      end
   	end
 
     def show

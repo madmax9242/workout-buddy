@@ -1,6 +1,10 @@
 class LegsResultsController < ApplicationController
 	def index
     	@legs_results = Legs_Result.all
+      respond_to do |format|
+        format.html
+        format.json { render :json => @legs_results.to_json }
+      end
   	end
 
     def show

@@ -1,5 +1,6 @@
 // Using e1 for exercise #1. Trying to dry up code
 var results;
+var type;
 
 function drawChart(e1, e2, e3, e4, e5, e6, results) {
 
@@ -27,32 +28,47 @@ function drawChart(e1, e2, e3, e4, e5, e6, results) {
   chart.draw(data, options);
 }
 
-function getDataPoints (type) {
+function getDataPoints () {
+  if (window.location.pathname == "/back_results" || window.location.pathname == "/back_results/show") {
+    type = "back_results";
+  } else if (window.location.pathname == "/chest_results")  {
+    type = "chest_results"
+      
+  } else if (window.location.pathname == "/legs_results")  {
+    type = "legs_results";
+  }
   
   $.ajax( {
-    url: "./show",
+    url: "/" + type,
     type: "get",
     dataType: "json",
 
     success: function(data)  {
-      var results = [];
-      var type = "back";     
+      var results = []; 
+      var counter = 1;   
       for (var i = 0; i < data.length; i++) {
         var array = $.map(data[i], function(value, index) {
           return [value];
         });
-        array.splice(-1,1);
-        results.push(array);
+
+        var userTest = parseInt($('#userId').val());
+        console.log(userTest);
+        if (array[(array.length - 1)] == userTest)  {
+          array.splice(-1,1);
+          array[0] = (counter);
+          results.push(array);
+          counter++;
+        }
+
       }
 
-      if (window.location.pathname == "/back_results") {
+      if (type == "back_results") {
         drawChart("Seated Row", "Lat Pulldown", "Renegade Row", "Seated Good Mornings", "Deadlift", "Deltoid Fly", results);
-      
-      } else if (window.location.pathname == "/chest_results/show")  {
+      } else if (type == "chest_results")  {
         drawChart("Flat Bench Press", "Incline Dumbbell Press", "Cable Fly", "Decline Bench Press", "Incline Fly", "Stabilization Pushup", results);
       
-      } else if (window.location.pathname == "/legs_results/show")  {
-        drawChart("Back Squat", "Calf Raises", "Leg Press", "Leg Curl", "Leg Extension", "Lunges");
+      } else if (type == "legs_results")  {
+        drawChart("Back Squat", "Calf Raises", "Leg Press", "Leg Curl", "Leg Extension", "Lunges", results);
       }
           
 

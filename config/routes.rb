@@ -11,6 +11,10 @@ Rails.application.routes.draw do
   resources :chest_results
   resources :legs_results
 
+  get 'back_progress' => 'back_results#show'
+  get 'chest_progress' => 'chest_results#show'
+  get 'legs_progress' => 'chest_results#show'
+
   get 'login' => 'user_sessions#new', :as => :login
   post 'logout' => 'user_sessions#destroy', :as => :logout
   # The priority is based upon order of creation: first created -> highest priority.
