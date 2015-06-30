@@ -16,7 +16,7 @@ $(document).ready(function() {
       calculateDistance(startPos.coords.latitude, startPos.coords.longitude,
                         position.coords.latitude, position.coords.longitude);
   });
-};
+});
 
 function calculateDistance(lat1, lon1, lat2, lon2) {
   var R = 6371; // km
