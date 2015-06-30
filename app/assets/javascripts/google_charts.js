@@ -19,7 +19,7 @@ function drawChart(e1, e2, e3, e4, e5, e6, results) {
     chart: {
       title: 'Workout Progression',
     },
-    width: 900,
+    width: 600,
     height: 500
   };
 
