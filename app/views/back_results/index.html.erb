@@ -1,14 +1,6 @@
 <html>
 <head>
-  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-  <script type="text/javascript">
-    // google.load('visualization', '1.1', {packages: ['line']});
-    // $(document).ready(function() {
-    // 	google.setOnLoadCallback(getDataPoints);
-    // })
-    // google.setOnLoadCallback(getDataPoints);
-
-  </script>
+  <title>Back Progression</title>
 </head>
 <body>
 	<input type="hidden" id="userId" value='<%= @current_user.id %>'>
@@ -18,14 +10,16 @@
 		<div class="one column"></div>
 	</div>
 
-</body>
-
-<script type="text/javascript">
-    google.load('visualization', '1.1', {packages: ['line']});
-    // $(document).ready(function() {
-    //  google.setOnLoadCallback(getDataPoints);
-    // });
-    google.setOnLoadCallback(getDataPoints);
+  <script type="text/javascript">
+    
+    $(function() {
+      
+      getDataPoints();
+    })
 
   </script>
+
+</body>
+
+
 </html>

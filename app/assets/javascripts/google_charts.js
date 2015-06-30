@@ -29,7 +29,7 @@ function drawChart(e1, e2, e3, e4, e5, e6, results) {
 }
 
 function getDataPoints () {
-  $(document).ready(function() {
+  
 
 
     if (window.location.pathname == "/back_results" || window.location.pathname == "/back_results/show") {
@@ -66,12 +66,12 @@ function getDataPoints () {
         }
 
         if (type == "back_results") {
-          drawChart("Seated Row", "Lat Pulldown", "Renegade Row", "Seated Good Mornings", "Deadlift", "Deltoid Fly", results);
+          google.setOnLoadCallback(drawChart("Seated Row", "Lat Pulldown", "Renegade Row", "Seated Good Mornings", "Deadlift", "Deltoid Fly", results));
         } else if (type == "chest_results")  {
-          drawChart("Flat Bench Press", "Incline Dumbbell Press", "Cable Fly", "Decline Bench Press", "Incline Fly", "Stabilization Pushup", results);
+          google.setOnLoadCallback(drawChart("Flat Bench Press", "Incline Dumbbell Press", "Cable Fly", "Decline Bench Press", "Incline Fly", "Stabilization Pushup", results));
         
         } else if (type == "legs_results")  {
-          drawChart("Back Squat", "Calf Raises", "Leg Press", "Leg Curl", "Leg Extension", "Lunges", results);
+          google.setOnLoadCallback(drawChart("Back Squat", "Calf Raises", "Leg Press", "Leg Curl", "Leg Extension", "Lunges", results));
         }
             
 
@@ -79,6 +79,7 @@ function getDataPoints () {
       failure: function() {
         console.log("No dice");
       }
+    
     });
-  });
+
 }

@@ -1,11 +1,6 @@
 <html>
 <head>
-  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-  <script type="text/javascript">
-    // google.load('visualization', '1.1', {packages: ['line']});
-    // google.setOnLoadCallback(getDataPoints);
-
-  </script>
+  <title>Legs Progression</title>
 </head>
 <body>
     <input type="hidden" id="userId" value="'<%= @current_user.id %>'">
@@ -18,11 +13,9 @@
 </body>
 
 <script type="text/javascript">
-    google.load('visualization', '1.1', {packages: ['line']});
-    // $(document).ready(function() {
-    //  google.setOnLoadCallback(getDataPoints);
-    // })
-    google.setOnLoadCallback(getDataPoints);
 
-  </script>
+    $(function() {
+      getDataPoints();
+    })
+</script>
 </html>
