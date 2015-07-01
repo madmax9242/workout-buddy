@@ -4,6 +4,10 @@
 
   </head>
   <body>
+    <div id="current-weather">
+      The current temperature is: 
+      <span id="temperature"></span> and the forecast is <span id="rain"></span>
+    </div>
 
     <div id="tripmeter">
       <h3><p>
@@ -16,8 +20,44 @@
       </p></h3>
       <h3><p>
         Distance from starting location:<br/>
-        <span id="distance">0</span> km
+        <span id="distance">0</span> mi
       </p></h3>
     </div>
   </body>
+</html>
+
+
+<!-- <html>
+  <head>
+
+    <style>
+      html, body, #map-canvas {
+        height: 100%;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0px
+      }
+      #map_box  {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+      }
+    </style>
+
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCd3zsA432OcEnszunfEXjH12Yiw1FERAU">
+    </script>
+
+
+  </head>
+  <body>
+    <input type="hidden" id="address" value="600 Congress Ave, Austin, TX">
+    <div id="map-canvas"></div>
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+        loadScript();
+        }); 
+    </script>
+  </body> -->
 </html>
