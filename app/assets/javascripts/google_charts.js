@@ -55,7 +55,6 @@ function getDataPoints () {
           });
 
           var userTest = parseInt($('#userId').val());
-          console.log(userTest);
           if (array[(array.length - 1)] == userTest)  {
             array.splice(-1,1);
             array[0] = (counter);
