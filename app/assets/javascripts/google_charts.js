@@ -4,6 +4,7 @@ var type;
 
 function drawChart(e1, e2, e3, e4, e5, e6, results) {
 
+  // Columns require datatype and name
   var data = new google.visualization.DataTable();
   data.addColumn('number', 'Day');
   data.addColumn('number', e1);
@@ -30,7 +31,7 @@ function drawChart(e1, e2, e3, e4, e5, e6, results) {
 
 function getDataPoints () {
   
-
+    // Checks the URL of the show page to determine which list of exercises to put on the columns
 
     if (window.location.pathname == "/back_results" || window.location.pathname == "/back_results/show") {
       type = "back_results";
@@ -40,7 +41,7 @@ function getDataPoints () {
     } else if (window.location.pathname == "/legs_results")  {
       type = "legs_results";
     }
-    
+    // Use type variable from initial check to see which database column to pull from
     $.ajax( {
       url: "/" + type,
       type: "get",
@@ -55,8 +56,11 @@ function getDataPoints () {
           });
 
           var userTest = parseInt($('#userId').val());
+          // Makes sure that only the data that was logged by the current user shows up on their graph
           if (array[(array.length - 1)] == userTest)  {
+            // Then removes the user_id data since it isn't in the graph
             array.splice(-1,1);
+            // Had to make a counter variable for the days/workouts logged. It increments for ever record pulled instead of relying on the entry ID which could be scattered
             array[0] = (counter);
             results.push(array);
             counter++;

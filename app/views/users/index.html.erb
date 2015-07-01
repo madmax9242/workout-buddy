@@ -10,8 +10,8 @@
 <%= link_to 'Back Workout', back_results_path %>  |
 <%= link_to 'Legs Workout', legs_results_path %></h4>
 <% if (current_user) %>
-	<h3 class="results-header">Feel like a run instead?</h3><br>
-	<h4><%= link_to 'Track your run distance', controller: 'users', id: 0 , action: 'tracker' %></h4>
+	<p><h3 class="results-header">Feel like a run instead?</h3><br>
+	<h4><%= link_to 'Track your run distance', controller: 'users', id: 0 , action: 'tracker' %></h4></p>
 <% end %>
 
 	

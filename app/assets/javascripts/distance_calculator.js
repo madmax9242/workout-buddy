@@ -1,5 +1,7 @@
 $(document).ready(function() {
   var startPos;
+  
+  // Finds the current position of the user and stores it in the starting position variable
   navigator.geolocation.getCurrentPosition(function(position) {
     startPos = position;
     var lat = startPos.coords.latitude;
@@ -13,6 +15,7 @@ $(document).ready(function() {
   
   });
 
+  // Checks the current location, and if it's different from the starting position, it gets stored in the current position variable
   navigator.geolocation.watchPosition(function(position) {
   	document.getElementById('currentLat').innerHTML = position.coords.latitude;
   	document.getElementById('currentLon').innerHTML = position.coords.longitude;
@@ -22,6 +25,7 @@ $(document).ready(function() {
   });
 });
 
+// Takes the lat and lon from current position and starting position and does fancy math on it
 function calculateDistance(lat1, lon1, lat2, lon2) {
   var R = 6371; // km
   var dLat = (lat2 - lat1).toRad();
@@ -38,6 +42,7 @@ Number.prototype.toRad = function() {
   return this * Math.PI / 180;
 }
 
+// Queries the open weather api to get the temperature and current weather description
 function getWeather(lat, lon)  {
 
   $.ajax({
@@ -48,6 +53,7 @@ function getWeather(lat, lon)  {
     success: function(data) {
       console.log(data);
       var temp = data["main"]["temp"];
+      // Returns temp in Kelvin, so had to convert it to F
       temp = ((temp - 273.15)*1.8000 + 32);
       $('#temperature').text(temp);
       var forecast = data['weather'][0]['description'];
