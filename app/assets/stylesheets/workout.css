@@ -7,3 +7,15 @@
 	margin:0 auto;
 	
 }
+
+.layout-yield {
+	background-color: lightgreen;
+	max-width: 80%;
+	margin: 0 auto;
+}
+
+.pitt-gif {
+	max-width: 100%;
+	max-height: 100%;
+	margin:0 auto;
+}
