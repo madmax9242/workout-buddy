@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
+    @home_pic = ['http://i.imgur.com/AIRwlFc.gif', 'http://www.funnyjunksite.com/pictures/funnypics/sport/weight_lifting/funny_weight_lifting_picture_11.jpg', 'http://www.pacificridgeclothing.com/designs/2011/Z12090/Z12090.jpg', 'http://i1015.photobucket.com/albums/af273/Chapa37/gif/celebrity-gifs-brad-pitt-workout.gif', 'http://www.bettycjung.net/BG2013/dogsquats', ]
   end
 
   # GET /users/1
