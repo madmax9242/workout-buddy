@@ -1,28 +1,35 @@
 <% if (current_user) %>
-	<h3>Welcome....now go work out!</h3>
+	<div class="center">
+		<h3>Welcome....now go work out!</h3>
 
-	<br>
-	<h3 class="results-header">View your progress</h3><br>
+		<h3>Workouts</h3>
+		<h4><%= link_to 'Chest Workout Routine', new_chest_result_path %>  |  <%= link_to 'Back Workout Routine', new_back_result_path %>  |  <%= link_to 'Legs Workout Routine', new_legs_result_path %></h4>
 
-	<h4><%= link_to 'Chest Workout', chest_results_path %>  |
-	<%= link_to 'Back Workout', back_results_path %>  |
-	<%= link_to 'Legs Workout', legs_results_path %></h4>
+		<h3 class="results-header">View your progress</h3>
+		
+		<h4><%= link_to 'Chest Progression', chest_results_path %>  |
+		<%= link_to 'Back Progression', back_results_path %>  |
+		<%= link_to 'Legs Progression', legs_results_path %></h4>
 <!-- 	<p><h3 class="results-header">Feel like a run instead?</h3><br>
 	<h4><%#= link_to 'Track your run distance', controller: 'users', id: 0 , action: 'tracker' %></h4></p> -->
+	</div>
 <% else %>
-	<h2>Welcome.  This app is designed to assist you in tracking your overall improvement in 3 core workouts.</h2>
-	<h3>If you are a returning user, please login to begin. If you are a new user, please register to begin your workout</h3>
+	<div class="center">
+		<h2 class="center">Welcome.  This app is designed to assist you in tracking your overall improvement in 3 core workouts.</h2>
+		<h3 class="center">If you are a returning user, please login to begin. If you are a new user, please register to begin your workout</h3>
+	</div>
+<% end %>
 
-	<div class="container">
+	<div class="container-fluid">
 		<div class="col-xs-4">
 		</div>
 		<div class="col-xs-4">
-			<img class="pitt-gif" src="http://www.pacificridgeclothing.com/designs/2011/Z12090/Z12090.jpg" alt="Motivated Exercise">
+			<img class="pitt-gif" src=<%= @home_pic %> alt="Motivated Exercise">
 		</div>
 		<div class="col-xs-4">
 		</div>
 	</div>
 
-<% end %>
+
 
 	

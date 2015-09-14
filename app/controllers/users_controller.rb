@@ -6,6 +6,8 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
+    @home_pic_array = ['http://i.imgur.com/AIRwlFc.gif', 'http://www.funnyjunksite.com/pictures/funnypics/sport/weight_lifting/funny_weight_lifting_picture_11.jpg', 'http://www.pacificridgeclothing.com/designs/2011/Z12090/Z12090.jpg', 'http://i1015.photobucket.com/albums/af273/Chapa37/gif/celebrity-gifs-brad-pitt-workout.gif', 'http://www.bettycjung.net/BG2013/dogsquats', 'http://33.media.tumblr.com/4eea5ddf921a179c0f771475ee591ad6/tumblr_mf5x5skvBv1r5yiuao1_500.gif', 'http://img0.joyreactor.com/pics/post/gif-gym-Cyanide-%26-Happiness-comics-883866.gif', 'http://www.funnfun.in/wp-content/uploads/2013/10/treadmill-workouts-of-funny-dogs-funny-gif.gif', 'http://animationsa2z.com/attachments/Image/animals/animals17.gif', 'http://funnyasduck.net/wp-content/uploads/2012/11/funny-dog-walk-lying-down-exercise-hard-carry-me-leash-lead-pics.jpg', 'http://www.vitamin-ha.com/wp-content/uploads/2013/08/Funny-Gym-and-Workout-21.jpg', 'http://fitnessmotivationalquotes.com/wp-content/uploads/2012/04/Zombie.jpg']
+    @home_pic = @home_pic_array.sample
   end
 
   # GET /users/1
